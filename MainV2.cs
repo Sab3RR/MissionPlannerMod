@@ -8,6 +8,7 @@ using MissionPlanner.ArduPilot;
 using MissionPlanner.Comms;
 using MissionPlanner.Controls;
 using MissionPlanner.GCSViews.ConfigurationView;
+using MissionPlanner.GCSViews;
 using MissionPlanner.Log;
 using MissionPlanner.Maps;
 using MissionPlanner.Utilities;
@@ -1148,7 +1149,13 @@ namespace MissionPlanner
 
             MainV2.comPort.MavChanged += comPort_MavChanged;
 
-            // save config to test we have write access
+
+            //this.quickView1.Dock = DockStyle.Fill;
+            this.quickView1.DoubleClick += FlightData.quickView_DoubleClick;
+            this.quickView1.numberColor = ThemeManager.getQvNumberColor();
+            this.quickView1.numberColorBackup = this.quickView1.numberColor;
+            this.quickView1.number = 0;
+            
             SaveConfig();
         }
 
@@ -4809,6 +4816,12 @@ namespace MissionPlanner
                     break;
                 }
             }
+        }
+       
+        private void quickView1_DoubleClick(object sender, EventArgs e)
+        {
+           // FlightData.quickView_DoubleClick(sender, e);
+           
         }
     }
 }

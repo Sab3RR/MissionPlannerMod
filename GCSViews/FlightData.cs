@@ -3998,7 +3998,7 @@ namespace MissionPlanner.GCSViews
             }
         }
 
-        private void quickView_DoubleClick(object sender, EventArgs e)
+        public void quickView_DoubleClick(object sender, EventArgs e)
         {
             if (MainV2.DisplayConfiguration.lockQuickView)
                 return;
@@ -4098,6 +4098,10 @@ namespace MissionPlanner.GCSViews
             };
 
             selectform.ShowDialog(this);
+        }
+        public static void quickView_DoubleClick_MainV2(object sender, EventArgs e)
+        {
+           
         }
 
         private void recordHudToAVIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5769,6 +5773,9 @@ namespace MissionPlanner.GCSViews
             Settings.Instance["tabControlactions_Multiline"] = tabControlactions.Multiline.ToString();
         }
 
-        
+        private void quickView1_PaintSurface(object sender, SkiaSharp.Views.Desktop.SKPaintSurfaceEventArgs e)
+        {
+
+        }
     }
 }

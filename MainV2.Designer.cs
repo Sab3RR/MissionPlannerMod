@@ -54,6 +54,7 @@ namespace MissionPlanner
             this.MenuArduPilot = new System.Windows.Forms.ToolStripButton();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.quickView1 = new MissionPlanner.Controls.QuickView();
             this.status1 = new MissionPlanner.Controls.Status();
             this.MainMenu.SuspendLayout();
             this.CTX_mainmenu.SuspendLayout();
@@ -212,11 +213,23 @@ namespace MissionPlanner
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.quickView1);
             this.panel1.Controls.Add(this.status1);
             this.panel1.Controls.Add(this.MainMenu);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // quickView1
+            // 
+            this.quickView1.desc = "";
+            resources.ApplyResources(this.quickView1, "quickView1");
+            this.quickView1.Name = "quickView1";
+            this.quickView1.number = -9999D;
+            this.quickView1.numberColor = System.Drawing.Color.Empty;
+            this.quickView1.numberColorBackup = System.Drawing.Color.Empty;
+            this.quickView1.numberformat = "0.00";
+            this.quickView1.DoubleClick += new System.EventHandler(this.quickView1_DoubleClick);
             // 
             // status1
             // 
@@ -264,5 +277,6 @@ namespace MissionPlanner
         public System.Windows.Forms.ToolStripButton MenuHelp;
         public System.Windows.Forms.ToolStripButton MenuArduPilot;
         public Controls.Status status1;
+        private Controls.QuickView quickView1;
     }
 }
