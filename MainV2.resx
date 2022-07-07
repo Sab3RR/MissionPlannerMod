@@ -959,7 +959,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -971,7 +971,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>944, 28</value>
+    <value>967, 28</value>
   </data>
   <data name="menu.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -991,20 +991,113 @@
   <data name="&gt;&gt;menu.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="quickView5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="quickView5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 3</value>
+  </data>
+  <data name="quickView5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 41</value>
+  </data>
+  <data name="quickView5.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;quickView5.Name" xml:space="preserve">
+    <value>quickView5</value>
+  </data>
+  <data name="&gt;&gt;quickView5.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.QuickView, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;quickView5.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;quickView5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="quickView4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="quickView4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 3</value>
+  </data>
+  <data name="quickView4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 41</value>
+  </data>
+  <data name="quickView4.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;quickView4.Name" xml:space="preserve">
+    <value>quickView4</value>
+  </data>
+  <data name="&gt;&gt;quickView4.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.QuickView, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;quickView4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;quickView4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="quickView3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="quickView3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 3</value>
+  </data>
+  <data name="quickView3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 41</value>
+  </data>
+  <data name="quickView3.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;quickView3.Name" xml:space="preserve">
+    <value>quickView3</value>
+  </data>
+  <data name="&gt;&gt;quickView3.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.QuickView, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;quickView3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;quickView3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="quickView2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="quickView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>455, 3</value>
+  </data>
+  <data name="quickView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 41</value>
+  </data>
+  <data name="quickView2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;quickView2.Name" xml:space="preserve">
+    <value>quickView2</value>
+  </data>
+  <data name="&gt;&gt;quickView2.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.QuickView, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;quickView2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;quickView2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="quickView1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="quickView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 3</value>
+    <value>553, 3</value>
   </data>
   <data name="quickView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 41</value>
   </data>
   <data name="quickView1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="quickView1.Text" xml:space="preserve">
-    <value>quickView1</value>
   </data>
   <data name="&gt;&gt;quickView1.Name" xml:space="preserve">
     <value>quickView1</value>
@@ -1016,7 +1109,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;quickView1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="status1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1037,13 +1130,13 @@
     <value>status1</value>
   </data>
   <data name="&gt;&gt;status1.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.Status, MissionPlanner, Version=1.3.8220.32184, Culture=neutral, PublicKeyToken=null</value>
+    <value>MissionPlanner.Controls.Status, MissionPlanner, Version=1.3.8223.32909, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;status1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;status1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 54</value>
@@ -1085,7 +1178,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>944, 536</value>
+    <value>967, 411</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2822,7 +2915,7 @@
     <value>toolStripConnectionControl</value>
   </data>
   <data name="&gt;&gt;toolStripConnectionControl.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ToolStripConnectionControl, MissionPlanner, Version=1.3.8220.32184, Culture=neutral, PublicKeyToken=null</value>
+    <value>MissionPlanner.Controls.ToolStripConnectionControl, MissionPlanner, Version=1.3.8223.32909, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MenuArduPilot.Name" xml:space="preserve">
     <value>MenuArduPilot</value>

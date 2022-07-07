@@ -4862,6 +4862,10 @@ namespace MissionPlanner.GCSViews
             }
         }
 
+        public void publicUpdateQuickTab()
+        {
+            MainV2.comPort.MAV.cs.UpdateCurrentSettings(bindingSourceQuickTab.UpdateDataSource(MainV2.comPort.MAV.cs));
+        }
         private void updateBindingSourceWork()
         {
             try

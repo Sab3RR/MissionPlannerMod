@@ -698,7 +698,7 @@ namespace MissionPlanner
             }
         }
 
-
+        Thread thisthread;
         public MainV2()
         {
             log.Info("Mainv2 ctor");
@@ -1155,10 +1155,75 @@ namespace MissionPlanner
             this.quickView1.numberColor = ThemeManager.getQvNumberColor();
             this.quickView1.numberColorBackup = this.quickView1.numberColor;
             this.quickView1.number = 0;
-            
+           
+
+            this.quickView2.DoubleClick += FlightData.quickView_DoubleClick;
+            this.quickView2.numberColor = ThemeManager.getQvNumberColor();
+            this.quickView2.numberColorBackup = this.quickView1.numberColor;
+            this.quickView2.number = 0;
+
+            this.quickView3.DoubleClick += FlightData.quickView_DoubleClick;
+            this.quickView3.numberColor = ThemeManager.getQvNumberColor();
+            this.quickView3.numberColorBackup = this.quickView1.numberColor;
+            this.quickView3.number = 0;
+
+            this.quickView4.DoubleClick += FlightData.quickView_DoubleClick;
+            this.quickView4.numberColor = ThemeManager.getQvNumberColor();
+            this.quickView4.numberColorBackup = this.quickView1.numberColor;
+            this.quickView4.number = 0;
+
+            this.quickView5.DoubleClick += FlightData.quickView_DoubleClick;
+            this.quickView5.numberColor = ThemeManager.getQvNumberColor();
+            this.quickView5.numberColorBackup = this.quickView1.numberColor;
+            this.quickView5.number = 0;
+
+            try
+            {
+                thisthread = new Thread(mainloop);
+                thisthread.Name = "MainV2 Mainloop";
+                thisthread.IsBackground = true;
+                thisthread.Start();
+            }
+            catch (NotSupportedException)
+            {
+                
+            }
+
             SaveConfig();
         }
 
+        private void mainloop()
+        {
+            threadrun = true;
+            while (threadrun)
+            {
+            //////    if (quickview1.tag != null)
+            //////    {
+                    
+            //////        quickview1.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview1.tag);
+            //////    }
+            //////    if (quickview2.tag != null)
+            //////    {
+            //////        quickview2.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview2.tag);
+            //////    }
+            ////    if (quickview3.tag != null)
+            ////    {
+            ////        quickview3.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview3.tag);
+            ////    }
+            ////    if (quickview4.tag != null)
+            ////    {
+            ////        quickview4.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview4.tag);
+            ////    }
+            ////    if (quickview5.tag != null)
+            ////    {
+            ////     //   quickview5.number = mainv2.comport.mav.cs.yaw;
+            ////     //   quickview5.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview5.tag);
+            ////    }
+                FlightData.publicUpdateQuickTab();
+                Thread.Sleep(50);
+            }
+            
+        }
         void cmb_sysid_Click(object sender, EventArgs e)
         {
             MainV2._connectionControl.UpdateSysIDS();
@@ -4601,7 +4666,7 @@ namespace MissionPlanner
         const Int32 DIGCF_DEVICEINTERFACE = 0X10;
         const Int32 WM_DEVICECHANGE = 0X219;
         public static Guid GUID_DEVINTERFACE_USB_DEVICE = new Guid("A5DCBF10-6530-11D2-901F-00C04FB951ED");
-
+        private bool threadrun;
 
         public enum WM_DEVICECHANGE_enum
         {

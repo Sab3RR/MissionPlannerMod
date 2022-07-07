@@ -54,6 +54,10 @@ namespace MissionPlanner
             this.MenuArduPilot = new System.Windows.Forms.ToolStripButton();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.quickView5 = new MissionPlanner.Controls.QuickView();
+            this.quickView4 = new MissionPlanner.Controls.QuickView();
+            this.quickView3 = new MissionPlanner.Controls.QuickView();
+            this.quickView2 = new MissionPlanner.Controls.QuickView();
             this.quickView1 = new MissionPlanner.Controls.QuickView();
             this.status1 = new MissionPlanner.Controls.Status();
             this.MainMenu.SuspendLayout();
@@ -213,12 +217,56 @@ namespace MissionPlanner
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.quickView5);
+            this.panel1.Controls.Add(this.quickView4);
+            this.panel1.Controls.Add(this.quickView3);
+            this.panel1.Controls.Add(this.quickView2);
             this.panel1.Controls.Add(this.quickView1);
             this.panel1.Controls.Add(this.status1);
             this.panel1.Controls.Add(this.MainMenu);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // quickView5
+            // 
+            this.quickView5.desc = "";
+            resources.ApplyResources(this.quickView5, "quickView5");
+            this.quickView5.Name = "quickView5";
+            this.quickView5.number = -9999D;
+            this.quickView5.numberColor = System.Drawing.Color.Empty;
+            this.quickView5.numberColorBackup = System.Drawing.Color.Empty;
+            this.quickView5.numberformat = "0.00";
+            // 
+            // quickView4
+            // 
+            this.quickView4.desc = "";
+            resources.ApplyResources(this.quickView4, "quickView4");
+            this.quickView4.Name = "quickView4";
+            this.quickView4.number = -9999D;
+            this.quickView4.numberColor = System.Drawing.Color.Empty;
+            this.quickView4.numberColorBackup = System.Drawing.Color.Empty;
+            this.quickView4.numberformat = "0.00";
+            // 
+            // quickView3
+            // 
+            this.quickView3.desc = "";
+            resources.ApplyResources(this.quickView3, "quickView3");
+            this.quickView3.Name = "quickView3";
+            this.quickView3.number = -9999D;
+            this.quickView3.numberColor = System.Drawing.Color.Empty;
+            this.quickView3.numberColorBackup = System.Drawing.Color.Empty;
+            this.quickView3.numberformat = "0.00";
+            // 
+            // quickView2
+            // 
+            this.quickView2.desc = "";
+            resources.ApplyResources(this.quickView2, "quickView2");
+            this.quickView2.Name = "quickView2";
+            this.quickView2.number = -9999D;
+            this.quickView2.numberColor = System.Drawing.Color.Empty;
+            this.quickView2.numberColorBackup = System.Drawing.Color.Empty;
+            this.quickView2.numberformat = "0.00";
             // 
             // quickView1
             // 
@@ -278,5 +326,9 @@ namespace MissionPlanner
         public System.Windows.Forms.ToolStripButton MenuArduPilot;
         public Controls.Status status1;
         private Controls.QuickView quickView1;
+        private Controls.QuickView quickView5;
+        private Controls.QuickView quickView4;
+        private Controls.QuickView quickView3;
+        private Controls.QuickView quickView2;
     }
 }
