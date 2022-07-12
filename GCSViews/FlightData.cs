@@ -2091,12 +2091,12 @@ namespace MissionPlanner.GCSViews
             }
         }
 
-        private void NumberToBindingType(object sender, ConvertEventArgs e)
+        public void NumberToBindingType(object sender, ConvertEventArgs e)
         {
            
         }
 
-        private void BindingTypeToNumber(object sender, ConvertEventArgs e)
+        public void BindingTypeToNumber(object sender, ConvertEventArgs e)
         {
             if(e.Value is Boolean)
             {

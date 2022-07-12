@@ -701,6 +701,7 @@ namespace MissionPlanner
         Thread thisthread;
         public MainV2()
         {
+            
             log.Info("Mainv2 ctor");
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -1151,31 +1152,31 @@ namespace MissionPlanner
 
 
             //this.quickView1.Dock = DockStyle.Fill;
-            this.quickView1.DoubleClick += FlightData.quickView_DoubleClick;
-            this.quickView1.numberColor = ThemeManager.getQvNumberColor();
-            this.quickView1.numberColorBackup = this.quickView1.numberColor;
-            this.quickView1.number = 0;
+            this.mainQuickView1.DoubleClick += FlightData.quickView_DoubleClick;
+            this.mainQuickView1.numberColor = ThemeManager.getQvNumberColor();
+            this.mainQuickView1.numberColorBackup = this.mainQuickView1.numberColor;
+            this.mainQuickView1.number = 0;
            
 
-            this.quickView2.DoubleClick += FlightData.quickView_DoubleClick;
-            this.quickView2.numberColor = ThemeManager.getQvNumberColor();
-            this.quickView2.numberColorBackup = this.quickView1.numberColor;
-            this.quickView2.number = 0;
+            this.mainQuickView2.DoubleClick += FlightData.quickView_DoubleClick;
+            this.mainQuickView2.numberColor = ThemeManager.getQvNumberColor();
+            this.mainQuickView2.numberColorBackup = this.mainQuickView1.numberColor;
+            this.mainQuickView2.number = 0;
 
-            this.quickView3.DoubleClick += FlightData.quickView_DoubleClick;
-            this.quickView3.numberColor = ThemeManager.getQvNumberColor();
-            this.quickView3.numberColorBackup = this.quickView1.numberColor;
-            this.quickView3.number = 0;
+            this.mainQuickView3.DoubleClick += FlightData.quickView_DoubleClick;
+            this.mainQuickView3.numberColor = ThemeManager.getQvNumberColor();
+            this.mainQuickView3.numberColorBackup = this.mainQuickView1.numberColor;
+            this.mainQuickView3.number = 0;
 
-            this.quickView4.DoubleClick += FlightData.quickView_DoubleClick;
-            this.quickView4.numberColor = ThemeManager.getQvNumberColor();
-            this.quickView4.numberColorBackup = this.quickView1.numberColor;
-            this.quickView4.number = 0;
+            this.mainQuickView4.DoubleClick += FlightData.quickView_DoubleClick;
+            this.mainQuickView4.numberColor = ThemeManager.getQvNumberColor();
+            this.mainQuickView4.numberColorBackup = this.mainQuickView1.numberColor;
+            this.mainQuickView4.number = 0;
 
-            this.quickView5.DoubleClick += FlightData.quickView_DoubleClick;
-            this.quickView5.numberColor = ThemeManager.getQvNumberColor();
-            this.quickView5.numberColorBackup = this.quickView1.numberColor;
-            this.quickView5.number = 0;
+            this.mainQuickView5.DoubleClick += FlightData.quickView_DoubleClick;
+            this.mainQuickView5.numberColor = ThemeManager.getQvNumberColor();
+            this.mainQuickView5.numberColorBackup = this.mainQuickView1.numberColor;
+            this.mainQuickView5.number = 0;
 
             try
             {
@@ -1190,8 +1191,86 @@ namespace MissionPlanner
             }
 
             SaveConfig();
+            for (int f = 1; f < 30; f++)
+            {
+                // load settings
+                if (Settings.Instance["mainQuickView" + f] != null)
+                {
+                    Control[] ctls = Controls.Find("mainQuickView" + f, true);
+                    if (ctls.Length > 0)
+                    {
+                        QuickView QV = (QuickView)ctls[0];
+
+                        // set description and unit
+                        string desc = Settings.Instance["mainQuickView" + f];
+                        if (QV.Tag == null)
+                            QV.Tag = desc;
+                        QV.desc = MainV2.comPort.MAV.cs.GetNameandUnit(desc);
+
+                        // set databinding for value
+                        QV.DataBindings.Clear();
+                        try
+                        {
+                            var b = new Binding("number", FlightData.bindingSourceQuickTab,
+                                Settings.Instance["mainQuickView" + f], true);
+                            b.Format += new ConvertEventHandler(FlightData.BindingTypeToNumber);
+                            b.Parse += new ConvertEventHandler(FlightData.NumberToBindingType);
+
+                            QV.DataBindings.Add(b);
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Debug(ex);
+                        }
+                    }
+                }
+                else
+                {
+                    // if no config, update description on predefined
+                    try
+                    {
+                        Control[] ctls = Controls.Find("mainQuickView" + f, true);
+                        if (ctls.Length > 0)
+                        {
+                            QuickView QV = (QuickView)ctls[0];
+                            string desc = QV.desc;
+                            if (QV.Tag == null)
+                                QV.Tag = desc;
+                            QV.desc = MainV2.comPort.MAV.cs.GetNameandUnit(QV.Tag.ToString());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Debug(ex);
+                    }
+                }
+            }
+            //    FlightData.mV2 = this;
         }
 
+        public void setQuick(QuickView qv, int num)
+        {
+            if (num == 1)
+            {
+                this.mainQuickView1 = qv;
+            }
+            else if (num == 2)
+            {
+                this.mainQuickView2 = qv;
+            }
+            else if (num == 3)
+            {
+                this.mainQuickView3 = qv;
+            }
+            else if (num == 4)
+            {
+                this.mainQuickView4 = qv;
+            }
+            else if (num == 5)
+            {
+                this.mainQuickView5 = qv;
+            }
+        }
         private void mainloop()
         {
             threadrun = true;

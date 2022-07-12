@@ -54,15 +54,17 @@ namespace MissionPlanner
             this.MenuArduPilot = new System.Windows.Forms.ToolStripButton();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.quickView5 = new MissionPlanner.Controls.QuickView();
-            this.quickView4 = new MissionPlanner.Controls.QuickView();
-            this.quickView3 = new MissionPlanner.Controls.QuickView();
-            this.quickView2 = new MissionPlanner.Controls.QuickView();
-            this.quickView1 = new MissionPlanner.Controls.QuickView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.mainQuickView1 = new MissionPlanner.Controls.QuickView();
+            this.mainQuickView5 = new MissionPlanner.Controls.QuickView();
+            this.mainQuickView2 = new MissionPlanner.Controls.QuickView();
+            this.mainQuickView4 = new MissionPlanner.Controls.QuickView();
+            this.mainQuickView3 = new MissionPlanner.Controls.QuickView();
             this.status1 = new MissionPlanner.Controls.Status();
             this.MainMenu.SuspendLayout();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -217,67 +219,73 @@ namespace MissionPlanner
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.quickView5);
-            this.panel1.Controls.Add(this.quickView4);
-            this.panel1.Controls.Add(this.quickView3);
-            this.panel1.Controls.Add(this.quickView2);
-            this.panel1.Controls.Add(this.quickView1);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.status1);
             this.panel1.Controls.Add(this.MainMenu);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
             // 
-            // quickView5
+            // tableLayoutPanel1
             // 
-            this.quickView5.desc = "";
-            resources.ApplyResources(this.quickView5, "quickView5");
-            this.quickView5.Name = "quickView5";
-            this.quickView5.number = -9999D;
-            this.quickView5.numberColor = System.Drawing.Color.Empty;
-            this.quickView5.numberColorBackup = System.Drawing.Color.Empty;
-            this.quickView5.numberformat = "0.00";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.mainQuickView1, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mainQuickView5, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mainQuickView2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mainQuickView4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mainQuickView3, 2, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // quickView4
+            // mainQuickView1
             // 
-            this.quickView4.desc = "";
-            resources.ApplyResources(this.quickView4, "quickView4");
-            this.quickView4.Name = "quickView4";
-            this.quickView4.number = -9999D;
-            this.quickView4.numberColor = System.Drawing.Color.Empty;
-            this.quickView4.numberColorBackup = System.Drawing.Color.Empty;
-            this.quickView4.numberformat = "0.00";
+            this.mainQuickView1.desc = "";
+            resources.ApplyResources(this.mainQuickView1, "mainQuickView1");
+            this.mainQuickView1.Name = "mainQuickView1";
+            this.mainQuickView1.number = -9999D;
+            this.mainQuickView1.numberColor = System.Drawing.Color.Empty;
+            this.mainQuickView1.numberColorBackup = System.Drawing.Color.Empty;
+            this.mainQuickView1.numberformat = "0.00";
+            this.mainQuickView1.DoubleClick += new System.EventHandler(this.quickView1_DoubleClick);
             // 
-            // quickView3
+            // mainQuickView5
             // 
-            this.quickView3.desc = "";
-            resources.ApplyResources(this.quickView3, "quickView3");
-            this.quickView3.Name = "quickView3";
-            this.quickView3.number = -9999D;
-            this.quickView3.numberColor = System.Drawing.Color.Empty;
-            this.quickView3.numberColorBackup = System.Drawing.Color.Empty;
-            this.quickView3.numberformat = "0.00";
+            this.mainQuickView5.desc = "";
+            resources.ApplyResources(this.mainQuickView5, "mainQuickView5");
+            this.mainQuickView5.Name = "mainQuickView5";
+            this.mainQuickView5.number = -9999D;
+            this.mainQuickView5.numberColor = System.Drawing.Color.Empty;
+            this.mainQuickView5.numberColorBackup = System.Drawing.Color.Empty;
+            this.mainQuickView5.numberformat = "0.00";
             // 
-            // quickView2
+            // mainQuickView2
             // 
-            this.quickView2.desc = "";
-            resources.ApplyResources(this.quickView2, "quickView2");
-            this.quickView2.Name = "quickView2";
-            this.quickView2.number = -9999D;
-            this.quickView2.numberColor = System.Drawing.Color.Empty;
-            this.quickView2.numberColorBackup = System.Drawing.Color.Empty;
-            this.quickView2.numberformat = "0.00";
+            this.mainQuickView2.desc = "";
+            resources.ApplyResources(this.mainQuickView2, "mainQuickView2");
+            this.mainQuickView2.Name = "mainQuickView2";
+            this.mainQuickView2.number = -9999D;
+            this.mainQuickView2.numberColor = System.Drawing.Color.Empty;
+            this.mainQuickView2.numberColorBackup = System.Drawing.Color.Empty;
+            this.mainQuickView2.numberformat = "0.00";
             // 
-            // quickView1
+            // mainQuickView4
             // 
-            this.quickView1.desc = "";
-            resources.ApplyResources(this.quickView1, "quickView1");
-            this.quickView1.Name = "quickView1";
-            this.quickView1.number = -9999D;
-            this.quickView1.numberColor = System.Drawing.Color.Empty;
-            this.quickView1.numberColorBackup = System.Drawing.Color.Empty;
-            this.quickView1.numberformat = "0.00";
-            this.quickView1.DoubleClick += new System.EventHandler(this.quickView1_DoubleClick);
+            this.mainQuickView4.desc = "";
+            resources.ApplyResources(this.mainQuickView4, "mainQuickView4");
+            this.mainQuickView4.Name = "mainQuickView4";
+            this.mainQuickView4.number = -9999D;
+            this.mainQuickView4.numberColor = System.Drawing.Color.Empty;
+            this.mainQuickView4.numberColorBackup = System.Drawing.Color.Empty;
+            this.mainQuickView4.numberformat = "0.00";
+            // 
+            // mainQuickView3
+            // 
+            this.mainQuickView3.desc = "";
+            resources.ApplyResources(this.mainQuickView3, "mainQuickView3");
+            this.mainQuickView3.Name = "mainQuickView3";
+            this.mainQuickView3.number = -9999D;
+            this.mainQuickView3.numberColor = System.Drawing.Color.Empty;
+            this.mainQuickView3.numberColorBackup = System.Drawing.Color.Empty;
+            this.mainQuickView3.numberformat = "0.00";
             // 
             // status1
             // 
@@ -300,6 +308,7 @@ namespace MissionPlanner
             this.MainMenu.PerformLayout();
             this.CTX_mainmenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -325,10 +334,11 @@ namespace MissionPlanner
         public System.Windows.Forms.ToolStripButton MenuHelp;
         public System.Windows.Forms.ToolStripButton MenuArduPilot;
         public Controls.Status status1;
-        private Controls.QuickView quickView1;
-        private Controls.QuickView quickView5;
-        private Controls.QuickView quickView4;
-        private Controls.QuickView quickView3;
-        private Controls.QuickView quickView2;
+        private Controls.QuickView mainQuickView1;
+        private Controls.QuickView mainQuickView5;
+        private Controls.QuickView mainQuickView4;
+        private Controls.QuickView mainQuickView3;
+        private Controls.QuickView mainQuickView2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
