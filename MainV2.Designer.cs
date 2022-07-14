@@ -234,7 +234,6 @@ namespace MissionPlanner
             this.tableLayoutPanel1.Controls.Add(this.mainQuickView2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.mainQuickView4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.mainQuickView3, 2, 0);
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // mainQuickView1
@@ -310,6 +309,7 @@ namespace MissionPlanner
             this.MainMenu.PerformLayout();
             this.CTX_mainmenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
