@@ -4967,5 +4967,13 @@ namespace MissionPlanner
            // FlightData.quickView_DoubleClick(sender, e);
            
         }
+
+        private void MainV2_SizeChanged(object sender, EventArgs e)
+        {
+            int wSize = this.Size.Width;
+            int tSize = this.tableLayoutPanel1.Size.Width;
+            int center = (wSize - tSize) / 2;
+            this.tableLayoutPanel1.Location = new Point(center, this.tableLayoutPanel1.Location.Y);
+        }
     }
 }
