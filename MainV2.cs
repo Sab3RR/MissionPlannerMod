@@ -31,6 +31,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 using MissionPlanner.ArduPilot.Mavlink;
 using MissionPlanner.Utilities.HW;
@@ -1271,35 +1272,67 @@ namespace MissionPlanner
                 this.mainQuickView5 = qv;
             }
         }
+
+        Color blinkinColor = Color.Red;
+        DateTime last = DateTime.Now;
+        private void blinkin(Object myObject,
+                                            EventArgs myEventArgs)
+        {
+            if (blinkinColor == Color.Red)
+                blinkinColor = Color.Green;
+            else
+                blinkinColor = Color.Red;
+            
+            
+                
+        }
         private void mainloop()
         {
+
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Tick += new EventHandler(this.blinkin);
+            timer.Interval = 1000;
+            timer.Start();
             threadrun = true;
             while (threadrun)
             {
-            //////    if (quickview1.tag != null)
-            //////    {
-                    
-            //////        quickview1.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview1.tag);
-            //////    }
-            //////    if (quickview2.tag != null)
-            //////    {
-            //////        quickview2.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview2.tag);
-            //////    }
-            ////    if (quickview3.tag != null)
-            ////    {
-            ////        quickview3.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview3.tag);
-            ////    }
-            ////    if (quickview4.tag != null)
-            ////    {
-            ////        quickview4.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview4.tag);
-            ////    }
-            ////    if (quickview5.tag != null)
-            ////    {
-            ////     //   quickview5.number = mainv2.comport.mav.cs.yaw;
-            ////     //   quickview5.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview5.tag);
-            ////    }
+                //////    if (quickview1.tag != null)
+                //////    {
+
+                //////        quickview1.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview1.tag);
+                //////    }
+                //////    if (quickview2.tag != null)
+                //////    {
+                //////        quickview2.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview2.tag);
+                //////    }
+                ////    if (quickview3.tag != null)
+                ////    {
+                ////        quickview3.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview3.tag);
+                ////    }
+                ////    if (quickview4.tag != null)
+                ////    {
+                ////        quickview4.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview4.tag);
+                ////    }
+                ////    if (quickview5.tag != null)
+                ////    {
+                ////     //   quickview5.number = mainv2.comport.mav.cs.yaw;
+                ////     //   quickview5.desc = mainv2.comport.mav.cs.getnameandunit((string)quickview5.tag);
+                ////    }
+                if (FlightData == null)
+                    continue;
+                if (FlightData.qv_rpm != null)
+                {
+                    foreach (QuickView qv in FlightData.qv_rpm)
+                    {
+                        if (qv.number < 2500)
+                            qv.numberColor = blinkinColor;
+                        else
+                            qv.numberColor = Color.FromArgb(0, 0, 255, 0);
+                    }
+                }
                 FlightData.publicUpdateQuickTab();
                 Thread.Sleep(50);
+                Application.DoEvents();
             }
             
         }

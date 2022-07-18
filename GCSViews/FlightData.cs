@@ -2088,6 +2088,8 @@ namespace MissionPlanner.GCSViews
 
                 // close selection form
                 ((Form) checkbox.Parent).Close();
+                if (desc.Contains("rpm"))
+                    qv_rpm.Add(checkbox.Tag);
             }
         }
 
@@ -3998,12 +4000,17 @@ namespace MissionPlanner.GCSViews
             }
         }
 
+        public List<object> qv_rpm = new List<object>();
         public void quickView_DoubleClick(object sender, EventArgs e)
         {
             if (MainV2.DisplayConfiguration.lockQuickView)
                 return;
 
             QuickView qv = (QuickView) sender;
+
+            if (qv_rpm != null && qv_rpm.Contains(sender))
+                qv_rpm.Remove(sender);
+
 
             Form selectform = new Form
             {
