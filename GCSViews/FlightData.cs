@@ -2090,6 +2090,8 @@ namespace MissionPlanner.GCSViews
                 ((Form) checkbox.Parent).Close();
                 if (desc.Contains("rpm"))
                     qv_rpm.Add(checkbox.Tag);
+                else if (qv_rpm != null && qv_rpm.Contains(checkbox.Tag))
+                    qv_rpm.Remove(checkbox.Tag);
             }
         }
 
@@ -4008,8 +4010,7 @@ namespace MissionPlanner.GCSViews
 
             QuickView qv = (QuickView) sender;
 
-            if (qv_rpm != null && qv_rpm.Contains(sender))
-                qv_rpm.Remove(sender);
+            
 
 
             Form selectform = new Form

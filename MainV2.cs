@@ -1157,27 +1157,31 @@ namespace MissionPlanner
             this.mainQuickView1.numberColor = ThemeManager.getQvNumberColor();
             this.mainQuickView1.numberColorBackup = this.mainQuickView1.numberColor;
             this.mainQuickView1.number = 0;
-           
+
 
             this.mainQuickView2.DoubleClick += FlightData.quickView_DoubleClick;
             this.mainQuickView2.numberColor = ThemeManager.getQvNumberColor();
             this.mainQuickView2.numberColorBackup = this.mainQuickView1.numberColor;
             this.mainQuickView2.number = 0;
 
+
             this.mainQuickView3.DoubleClick += FlightData.quickView_DoubleClick;
             this.mainQuickView3.numberColor = ThemeManager.getQvNumberColor();
             this.mainQuickView3.numberColorBackup = this.mainQuickView1.numberColor;
             this.mainQuickView3.number = 0;
+
 
             this.mainQuickView4.DoubleClick += FlightData.quickView_DoubleClick;
             this.mainQuickView4.numberColor = ThemeManager.getQvNumberColor();
             this.mainQuickView4.numberColorBackup = this.mainQuickView1.numberColor;
             this.mainQuickView4.number = 0;
 
+
             this.mainQuickView5.DoubleClick += FlightData.quickView_DoubleClick;
             this.mainQuickView5.numberColor = ThemeManager.getQvNumberColor();
             this.mainQuickView5.numberColorBackup = this.mainQuickView1.numberColor;
             this.mainQuickView5.number = 0;
+
 
             try
             {
@@ -1223,6 +1227,8 @@ namespace MissionPlanner
                         {
                             log.Debug(ex);
                         }
+                        if (desc.Contains("rpm"))
+                            FlightData.qv_rpm.Add(QV);
                     }
                 }
                 else
@@ -1327,7 +1333,7 @@ namespace MissionPlanner
                         if (qv.number < 2500)
                             qv.numberColor = blinkinColor;
                         else
-                            qv.numberColor = Color.FromArgb(0, 0, 255, 0);
+                            qv.numberColor = Color.Green;
                     }
                 }
                 FlightData.publicUpdateQuickTab();
@@ -5007,6 +5013,15 @@ namespace MissionPlanner
             int tSize = this.tableLayoutPanel1.Size.Width;
             int center = (wSize - tSize) / 2;
             this.tableLayoutPanel1.Location = new Point(center, this.tableLayoutPanel1.Location.Y);
+        }
+
+        private void MainV2_MouseClick(object sender, MouseEventArgs e)
+        {
+            QuickView qv = (QuickView)sender;
+            if (qv.number != 9999)
+                qv.number = 9999;
+            else
+                qv.number = 1000;
         }
     }
 }
